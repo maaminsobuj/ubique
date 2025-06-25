@@ -30,52 +30,6 @@ body {
 }
 
 
-.hero-slider-item-content {
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-/*    max-width: 60%;*/
-    padding: 50px 0;
-}
-
-.button-wrap .btn {
-    margin: 5px;
-}
-
-.button-wrap {
-    margin-left: -5px;
-    margin-right: -5px;
-}
-
-.arrow-btn {
-    width: 50px;
-    height: 50px;
-    background: rgba(255,255,255, 0.3);
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    transition: .3s;
-    cursor: pointer;
-    z-index: 1;
-}
-
-.arrow-btn__next {
-    left: auto;
-    right: 20px;
-}
-
-.arrow-btn svg {
-    width: 20px;
-    color: #fff;
-    transition: .3s;
-}
-
 ul.slick-dots {
     list-style: none;
     padding: 0;
@@ -120,55 +74,4 @@ ul.slick-dots li:hover {
 
 .slick-slide {
     height: auto;
-}
-
-/* .hero-slider-item {
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-} */
-
-.btn {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    line-height: 1;
-}
-
-.btn-outline {
-    border: 1px solid;
-}
-
-.btn-wrap {
-    margin-bottom: 60px;
-        text-align: center;
-    margin-top: 25px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    background-image: url(assets/img/btn-shap.svg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.btn-solid {
-    font-size: 16px;
-    font-weight: 500;
-    color: #fff;
-    background: #3a30ba;
-    padding: 15px 25px;
-    display: inline-flex;
-    min-width: 150px;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-solid svg {
-    max-width: 20px;
-    margin-left: 10px;
-}
-
-.btn-solid:hover {
-    background: #12126e;
-    color: #fff;
 }

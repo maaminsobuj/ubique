@@ -1,12 +1,20 @@
 @import "tailwindcss";
+
+/*
+    Global Style
+======================== */
 /* Theme Color */
 @theme {
-    --color-theme: #EF3139;
-    --color-text: #444444;
+    --color-theme: #8da500;
+    --color-limeGreen: #c1d631;
+    --color-limeGreenDark: #8da500;
+
+    --color-text: #080808;
     --color-dark: #022D62;
     --color-light: #FFFFFF;
     --color-gray: #F1F1F1;
 }
+
 
 /* Typography */
 body {
@@ -25,24 +33,143 @@ p:not(:last-child) {
 }
 
 h1 {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl;
-}
-h2 {
-    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl;
-}
-h3 {
-    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl;
-}
-h4 {
-    @apply text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl;
-}
-h5 {
-    @apply text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl;
-}
-h6 {
-    @apply text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl;
+    @apply
+        text-2xl
+        sm:text-3xl
+        md:text-4xl
+        lg:text-5xl
+        xl:text-6xl
+    ;
 }
 
+h2 {
+    @apply
+        text-xl
+        sm:text-2xl
+        md:text-3xl
+        lg:text-4xl
+        xl:text-5xl
+    ;
+}
+
+h3 {
+    @apply
+        text-lg
+        sm:text-xl
+        md:text-2xl
+        lg:text-3xl
+        xl:text-4xl
+    ;
+}
+
+h4 {
+    @apply
+        text-base
+        sm:text-lg
+        md:text-xl
+        lg:text-2xl
+        xl:text-3xl
+    ;
+}
+
+h5 {
+    @apply
+        text-sm
+        sm:text-base
+        md:text-lg
+        lg:text-xl
+        xl:text-2xl
+    ;
+}
+
+h6 {
+    @apply
+        text-xs
+        sm:text-sm
+        md:text-base
+        lg:text-lg
+        xl:text-xl
+    ;
+}
+
+img {
+    @apply max-w-full w-full h-auto;
+}
+
+/* Ubique Button */
+.ubq__btn {
+    @apply
+        inline-flex
+        justify-center
+        items-center
+        bg-light hover:bg-theme
+        text-dark hover:text-light
+        px-[20px] sm:px-[25px]
+        py-[15px] sm:py-[18px]
+        font-medium
+        transition-all
+        duration-300
+        uppercase
+        text-[14px] sm:text-[16px]
+        leading-[1]
+        rounded-full
+    ;
+
+    & svg {
+        @apply w-[15px] sm:w-[18px] ml-[10px];
+    }
+}
+
+.ubg__readbtn {
+    @apply
+        relative
+        z-1
+        inline-flex
+        justify-center
+        items-center
+        leading-[1]
+        px-[20px] sm:px-[25px]
+        py-[13px] sm:py-[13px]
+    ;
+
+    & svg {
+        @apply
+            w-[20px]
+            ml-[10px]
+            transition-all
+            duration-300
+        ;
+    }
+
+    &:before {
+        @apply
+            content-[""]
+            absolute
+            z-[-1]
+            left-[0]
+            top-[50%]
+            transform
+            translate-y-[-50%]
+            transition-all
+            duration-300
+            h-[100%]
+            w-[50px]
+            bg-theme
+            rounded-[50px]
+        ;
+    }
+
+    &:hover::before {
+        @apply w-[100%];
+    }
+}
+
+.ubg__readbtn--rounded {
+    @apply
+        rounded-full
+        bg-dark
+    ;
+}
 
 .container {
   @apply max-w-[1200px] mx-auto px-4;
@@ -52,52 +179,64 @@ h6 {
     @apply py-[80px];
 }
 
+/* Header Top */
 .header-top {
     @apply py-2;
 }
 
-ul.ubique__info {
+.ubique__info {
     @apply flex items-center gap-5;
-}
+    & li {
 
-ul.ubique__info li a {
-    @apply block hover:text-[#ef3139] items-center flex;
-}
+        & a {
+            @apply block hover:text-theme items-center flex;
 
-ul.ubique__info li a svg {
-    @apply mr-[5px] w-[20px];
+            & svg {
+                @apply w-[20px] h-[20px];
+            }
+        }
+    }
 }
 
 ul.header__top-menu {
     @apply flex items-center justify-end gap-5;
-}
-
-ul.header__top-menu li a {
-    @apply block hover:text-[#ef3139];
+    & li {
+        & a {
+            @apply block hover:text-theme;
+        }
+    }
 }
 
 .brand-logo {
     @apply block max-w-[200px];
 }
 
-
 /* Main Navigation */
 .main-menu {
     @apply flex items-center;
     li {
         @apply relative;
+
         &:hover a {
-            @apply text-[#ef3139];
+            @apply text-theme;
         }
         a {
-            @apply block text-white py-[10px] px-[15px] uppercase;
+            @apply block text-light py-[10px] px-[15px] uppercase;
         }
     }
 }
 
-
-.count-project {
-    @apply bg-red-600 rounded-[10px] mt-5 text-center text-white px-[30px] py-[22px];
+/* About Section */
+.counter-box {
+    @apply
+        bg-theme
+        rounded-[10px]
+        mt-5
+        text-center
+        text-light
+        px-[30px]
+        py-[22px]
+    ;
 }
 
 .title {
@@ -105,25 +244,278 @@ ul.header__top-menu li a {
 }
 
 .title__h2 {
-    @apply text-4xl;
+    @apply
+        text-2xl
+        sm:text-3xl
+        md:text-4xl
+    ;
 }
 
 .stroke-text {
-    @apply lg:text-[72px] font-bold text-[rgba(0,0,0,0.2)];
+    @apply
+        text-[20px] lg:text-[72px]
+        font-bold
+        text-[rgba(0,0,0,0.2)]
+    ;
 }
 
 .slider__title--h1 {
-    @apply lg:text-[86px] font-bold text-light;
+    @apply
+        lg:text-[86px]
+        font-bold
+        text-light
+    ;
 }
 
 .slider__title--h3 {
-    @apply lg:text-[32px] text-light;
-}
-
-.ubq--btn {
-    /* border-radius: 50px !important; */
+    @apply
+        sm:text-xl
+        md:text-2xl
+        lg:text-3xl
+        text-light
+        !mb-[20px]
+    ;
 }
 
 .hero-slider-item {
-    @apply lg:min-h-[600px] flex items-center justify-center;
+    @apply
+        lg:min-h-[600px]
+        flex items-center
+        justify-center
+    ;
+}
+
+.hero-slider-item-content {
+    @apply
+        font-light
+        flex
+        flex-col
+        gap-[10px] sm:gap-[10px]
+        px-[15px] sm:px-[60px]
+        py-[80px]
+    ;
+}
+
+.arrow-btn {
+    @apply
+        inline-flex
+        justify-center
+        items-center
+        bg-[rgba(255,255,255,0.3)]
+        sm:rounded-full translate-y-[-50%]
+        transition-all
+        duration-300
+        ease-in-out
+        cursor-pointer
+        z-1 absolute
+        top-[50%]
+        w-[25px] sm:w-[50px]
+        h-[50px] sm:h-[50px]
+    ;
+
+    & svg {
+        @apply
+            w-[15px]
+            sm:w-[20px]
+            transition-all
+            duration-300
+            text-light
+        ;
+    }
+}
+
+.arrow-btn__prev {
+    @apply left-[0] sm:left-[20px];
+}
+
+.arrow-btn__next {
+    @apply right-[0] sm:right-[20px];
+}
+
+
+.rating-icon {
+    & svg {
+        @apply
+            w-[14px]
+            fill-theme
+        ;
+    }
+}
+
+.ubq_card {
+    @apply bg-gray-100 rounded-lg p-8;
+
+    & h3 {
+        @apply
+            text-[18px]
+            sm:text-[24px]
+            font-semibold
+            text-dark
+            mb-[15px]
+        ;
+    }
+}
+
+.ubq_image-card {
+    & h5 {
+        @apply
+            text-[20px]
+            font-semibold
+            text-light
+            mb-[10px]
+            transition-all
+            duration-300
+            flex
+            items-center
+            gap-3
+        ;
+
+        & span {
+            @apply
+                text-[rgba(255,255,255,0.1)]
+                text-[24px]
+                sm:text-[48px]
+                transition-all
+                duration-300
+            ;
+        }
+    }
+
+    &:hover h5 span {
+        @apply text-theme;
+    }
+}
+
+.ubq_image-card {
+    @apply
+        relative
+        pb-[15px]
+        border-b-[1px]
+        border-solid
+        border-[rgba(255,255,255,0.2)]
+    ;
+    &::after {
+        @apply
+            content-[""]
+            absolute
+            top-[100%]
+            left-0
+            w-[0]
+            h-[1px]
+            bg-limeGreen
+            transition-all
+            duration-300
+        ;
+    }
+    &:hover::after {
+        @apply w-full;
+    }
+}
+
+/*
+    Portfolio Style
+========================== */
+.portfolio__item {
+    @apply
+        relative
+        z-2
+        rounded-[10px]
+        overflow-hidden
+    ;
+    &:after {
+        @apply
+            content-[""]
+            absolute
+            top-0
+            left-0
+            w-full
+            h-full
+            bg-dark
+            opacity-0
+            transition-all
+            duration-300
+        ;
+    }
+    &:hover::after {
+        @apply
+            opacity-90
+        ;
+    }
+
+    &:hover .overlay__content svg {
+        @apply
+            opacity-100
+            top-[20px]
+            right-[20px]
+        ;
+    }
+    &:hover .portfolio__text {
+        @apply
+            opacity-100
+            bottom-[20px]
+        ;
+    }
+    &:hover .portfolio__image img {
+        @apply
+            scale-110
+        ;
+    }
+
+}
+
+.portfolio__image {
+    & img {
+        @apply
+            transition-all
+            duration-400
+        ;
+    }
+}
+
+.overlay__content {
+    @apply
+        absolute
+        top-0
+        left-0
+        w-full
+        h-full
+        z-1
+    ;
+
+    & svg {
+        @apply
+           top-0
+           right-[20px]
+            transition-all
+            duration-300
+            absolute
+            opacity-0
+            text-light hover:bg-theme
+        ;
+    }
+}
+
+.portfolio__text {
+    @apply
+        absolute
+        bottom-0
+        left-[20px]
+        text-light
+        transition-all
+        duration-300
+        opacity-0
+    ;
+
+    & a {
+        @apply
+            text-[16px]
+            sm:text-[20px]
+            font-semibold
+            text-light
+            hover:text-limeGreen
+            transition-all
+            duration-300
+            leading-[1.3]
+        ;
+    }
 }
