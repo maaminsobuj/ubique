@@ -359,7 +359,7 @@ ul.header__top-menu {
 .ubq_image-card {
     & h5 {
         @apply
-            text-[20px]
+            text-[18px]
             font-semibold
             text-light
             mb-[10px]

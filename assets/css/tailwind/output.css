@@ -951,7 +951,7 @@ ul.header__top-menu {
     display: flex;
     align-items: center;
     gap: calc(var(--spacing) * 3);
-    font-size: 20px;
+    font-size: 18px;
     --tw-font-weight: var(--font-weight-semibold);
     font-weight: var(--font-weight-semibold);
     color: var(--color-light);
