@@ -570,3 +570,105 @@ ul.header__top-menu {
         justify-center
     ;
 }
+
+.funfact {
+    @apply
+        flex
+        flex-col
+        items-center
+        justify-center
+        text-center
+        bg-[rgba(255,255,255,0.1)]
+        rounded-[10px]
+        p-[30px]
+        gap-[10px]
+    ;
+
+    & svg {
+        @apply w-[50px] h-[50px] fill-limeGreen text-limeGreen mb-[10px];
+    }
+
+    & h3 {
+        @apply text-3xl font-semibold text-light;
+    }
+
+    & p {
+        @apply text-lg text-light;
+    }
+}
+
+.price__item {
+    @apply
+        flex
+        flex-col
+        items-center
+        justify-center
+        text-center
+        bg-light
+        px-[30px]
+        pt-[50px]
+        pb-[120px]
+        gap-[20px]
+        relative
+    ;
+
+    &.featured {
+        @apply bg-dark text-light;
+
+        & .price {
+            @apply text-limeGreen;
+        }
+
+        & a.ubg__readbtn {
+            @apply bg-[rgba(255,255,255,0.2)];
+        }
+    }
+
+    & h3 {
+        @apply text-3xl font-semibold mb-3;
+    }
+
+    & p {
+        @apply text-lg;
+    }
+
+    & .price {
+        @apply relative text-dark;
+
+        & span.amount {
+            @apply font-bold !text-[48px];
+        }
+    }
+
+    & .currency,
+    & .period {
+        @apply !text-[24px] absolute;
+    }
+
+    & span.currency {
+        @apply left-[-20px] top-[5px];
+    }
+
+    & span.period {
+        @apply right-[-45px] bottom-[5px];
+    }
+
+    & a.ubg__readbtn {
+        @apply absolute bottom-[50px];
+    }
+}
+
+ul.price__features li:not(:last-child) {
+    border-bottom: 1px solid rgba(0,0,0, 0.2);
+}
+
+.featured ul.price__features li:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+}
+
+ul.price__features {
+    @apply w-full;
+    & li {
+        @apply py-[7px];
+    }
+}
