@@ -11,6 +11,7 @@
 
     --color-text: #080808;
     --color-dark: #022D62;
+    --color-dark-deep: #01132a;
     --color-light: #FFFFFF;
     --color-gray: #F1F1F1;
 }
@@ -518,4 +519,54 @@ ul.header__top-menu {
             leading-[1.3]
         ;
     }
+}
+
+.section-header {
+    & p {
+        @apply
+            text-lg
+        ;
+    }
+}
+
+.service__item {
+    @apply
+        flex
+        flex-col
+        gap-5
+        justify-center
+        items-center
+        text-center
+        p-[30px]
+        sm:border-x-[2px]
+        max-sm:border-y-[2px]
+        border-solid
+        border-gray-100
+    ;
+
+    & svg {
+        @apply
+            !fill-theme
+            w-[45px]
+            h-[45px]
+        ;
+    }
+
+    & h4 {
+        @apply
+            !text-lg
+            text-dark
+            font-semibold
+        ;
+    }
+}
+
+.service__icon {
+    @apply
+        w-[55px]
+        h-[55px]
+        flex
+        items-center
+        justify-center
+    ;
 }
