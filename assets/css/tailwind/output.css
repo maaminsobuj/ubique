@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-gray-100: oklch(96.7% 0.003 264.542);
+    --color-gray-300: oklch(87.2% 0.01 258.338);
     --spacing: 0.25rem;
     --text-xs: 0.75rem;
     --text-xs--line-height: calc(1 / 0.75);
@@ -43,6 +44,7 @@
     --default-mono-font-family: var(--font-mono);
     --color-theme: #8da500;
     --color-limeGreen: #c1d631;
+    --color-limeGreenDark: #8da500;
     --color-text: #080808;
     --color-dark: #022D62;
     --color-light: #FFFFFF;
@@ -283,6 +285,12 @@
   .h-\[10px\] {
     height: 10px;
   }
+  .h-full {
+    height: 100%;
+  }
+  .w-2\/12 {
+    width: calc(2/12 * 100%);
+  }
   .w-full {
     width: 100%;
   }
@@ -368,11 +376,17 @@
   .stroke-text {
     stroke: var(--color-text);
   }
+  .object-cover {
+    object-fit: cover;
+  }
   .p-5 {
     padding: calc(var(--spacing) * 5);
   }
   .px-2 {
     padding-inline: calc(var(--spacing) * 2);
+  }
+  .py-\[50px\] {
+    padding-block: 50px;
   }
   .pt-\[50px\] {
     padding-top: 50px;
@@ -425,6 +439,11 @@
     --tw-ease: var(--ease-in-out);
     transition-timing-function: var(--ease-in-out);
   }
+  .sm\:block {
+    @media (width >= 40rem) {
+      display: block;
+    }
+  }
   .sm\:w-1\/2 {
     @media (width >= 40rem) {
       width: calc(1/2 * 100%);
@@ -433,6 +452,11 @@
   .sm\:w-6\/12 {
     @media (width >= 40rem) {
       width: calc(6/12 * 100%);
+    }
+  }
+  .sm\:w-10\/12 {
+    @media (width >= 40rem) {
+      width: calc(10/12 * 100%);
     }
   }
   .sm\:grid-cols-2 {
@@ -1278,6 +1302,117 @@ ul.price__features {
   width: 100%;
   & li {
     padding-block: 7px;
+  }
+}
+.testimonial__item-inner {
+  margin-inline: auto;
+  max-width: 850px;
+  text-align: center;
+}
+.testimonial__user {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img {
+    height: 100px;
+    width: 100px;
+    border-radius: calc(infinity * 1px);
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+    border-color: var(--color-gray-300);
+    background-color: var(--color-dark);
+  }
+}
+.testimonial__text {
+  margin-bottom: 30px !important;
+  font-size: 20px;
+  --tw-leading: 1.3;
+  line-height: 1.3;
+  --tw-font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-light);
+  @media (width >= 40rem) {
+    font-size: 24px;
+  }
+}
+.testimonial__name {
+  font-size: var(--text-lg);
+  line-height: var(--tw-leading, var(--text-lg--line-height));
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark);
+  text-transform: uppercase;
+}
+.testimonial__active {
+  .arrow-btn {
+    border-radius: 0px;
+    & svg {
+      color: var(--color-dark);
+      &:hover {
+        @media (hover: hover) {
+          color: var(--color-limeGreenDark);
+        }
+      }
+    }
+  }
+}
+.partnerLogo_shape svg {
+  max-width: 100%;
+  fill: var(--color-theme);
+}
+.partnerLogo__inner-item {
+  margin: 10px;
+  display: flex;
+  min-height: 100px;
+  align-items: center;
+  justify-content: center;
+  border-style: var(--tw-border-style);
+  border-width: 2px;
+  --tw-border-style: solid;
+  border-style: solid;
+  border-color: rgba(255,255,255,0.5);
+  background-color: rgba(255,255,255,0.1);
+  padding: 10px;
+  & img {
+    max-height: 50px;
+    width: auto;
+    max-width: 100%;
+  }
+}
+.blog__meta span:not(:last-child):after {
+  margin-inline: 5px;
+  --tw-content: "|";
+  content: var(--tw-content);
+}
+.blog__meta {
+  margin-block: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 14px;
+  & span {
+    display: block;
+    text-transform: uppercase;
+  }
+}
+.blog__title {
+  margin-bottom: 10px;
+  display: block;
+  font-size: 24px;
+  --tw-leading: 1.3;
+  line-height: 1.3;
+  --tw-font-weight: var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-dark);
+  transition-property: all;
+  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  --tw-duration: 300ms;
+  transition-duration: 300ms;
+  &:hover {
+    @media (hover: hover) {
+      color: var(--color-theme);
+    }
   }
 }
 @property --tw-rotate-x {
