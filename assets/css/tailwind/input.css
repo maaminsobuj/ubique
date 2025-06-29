@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 
 /*
@@ -14,18 +15,31 @@
     --color-dark-deep: #01132a;
     --color-light: #FFFFFF;
     --color-gray: #F1F1F1;
+
+    /* Font Family */
+    --font-archivo: 'Archivo', 'sans-serif';
 }
 
-
-/* Typography */
-body {
-    @apply leading-[1.6] text-text;
-}
 html {
     @apply text-[16px];
 }
 
-h1, h2, h3, h4, h5, h6 {
+/* Typography
+===================== */
+body {
+    @apply
+        leading-[1.6]
+        text-text
+        font-archivo
+    ;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     @apply leading-[1];
 }
 
@@ -180,50 +194,85 @@ img {
     @apply py-[80px];
 }
 
-/* Header Top */
-.header-top {
-    @apply py-2;
+/* Hero Slider Style
+====================== */
+.slick-slide {
+    @apply h-auto;
 }
 
-.ubique__info {
-    @apply flex items-center gap-5;
+.hero-slider-item {
+    @apply
+        bg-dark
+        bg-cover
+        bg-center
+        z-1
+        relative
+    ;
+
+    &::after {
+        @apply
+            content-[""]
+            absolute
+            left-0
+            top-0
+            w-full
+            h-full
+            bg-dark
+            opacity-70
+            z-[-1]
+        ;
+    }
+
+}
+
+/* Slider Navigation
+========================  */
+.slick-dots {
+    @apply
+        list-none
+        p-0
+        m-0
+        flex
+        justify-between
+        absolute
+        bottom-[15px]
+        left-[50%]
+        transform translate-x-[-50%]
+        z-1
+    ;
+
     & li {
+        @apply
+            w-[15px]
+            h-[15px]
+            bg-[rgba(255,255,255,0.3)]
+            hover:bg-limeGreen
+            m-[3px]
+            rounded-full
+            cursor-pointer
+            transition-all
+            duration-300
+        ;
 
-        & a {
-            @apply block hover:text-theme items-center flex;
+        &.slick-active {
+            @apply bg-limeGreen;
+        }
 
-            & svg {
-                @apply w-[20px] h-[20px];
-            }
+        & button {
+            @apply hidden
         }
     }
 }
 
-ul.header__top-menu {
-    @apply flex items-center justify-end gap-5;
-    & li {
-        & a {
-            @apply block hover:text-theme;
-        }
-    }
+.arrow-btn {
+    @apply
+        hover:bg-light;
+    ;
 }
 
-.brand-logo {
-    @apply block max-w-[200px];
-}
-
-/* Main Navigation */
-.main-menu {
-    @apply flex items-center;
-    li {
-        @apply relative;
-
-        &:hover a {
-            @apply text-theme;
-        }
-        a {
-            @apply block text-light py-[10px] px-[15px] uppercase;
-        }
+.arrow-btn:hover {
+    & svg {
+        @apply text-dark;
     }
 }
 
@@ -529,6 +578,9 @@ ul.header__top-menu {
     }
 }
 
+
+/* Services Style
+======================== */
 .service__item {
     @apply
         flex
@@ -571,6 +623,8 @@ ul.header__top-menu {
     ;
 }
 
+/* FunFact Style
+======================== */
 .funfact {
     @apply
         flex
@@ -597,6 +651,9 @@ ul.header__top-menu {
     }
 }
 
+
+/* Pricing Table Style
+======================== */
 .price__item {
     @apply
         flex
@@ -673,6 +730,9 @@ ul.price__features {
     }
 }
 
+/* Testimonial Style
+======================== */
+
 .testimonial__item-inner {
     @apply
         max-w-[850px]
@@ -724,6 +784,8 @@ ul.price__features {
     }
 }
 
+/* Partner Logo Style
+======================== */
 .partnerLogo_shape svg {
     @apply fill-theme max-w-full;
 }
@@ -747,6 +809,8 @@ ul.price__features {
     }
 }
 
+/* Blog Style
+======================== */
 .blog__meta span:not(:last-child):after {
     @apply
         content-["|"]
@@ -781,4 +845,57 @@ ul.price__features {
         font-medium
         mb-[10px]
     ;
+}
+
+/* Footer
+======================== */
+.footer__logo {
+    & img {
+        @apply
+            max-w-[200px]
+            mb-[20px]
+        ;
+    }
+}
+
+.footer__widget-title {
+    @apply
+        text-xl
+        font-semibold
+        mb-[20px]
+        text-theme
+        uppercase
+    ;
+}
+
+.footer__menu {
+    & a {
+        @apply
+            inline-block
+            text-light
+            hover:text-theme
+            transition-all
+            duration-300
+        ;
+    }
+}
+
+.social__link {
+    @apply
+        flex
+        items-center
+        gap-[20px]
+    ;
+    & a {
+        & svg {
+            @apply
+                w-[20px]
+                h-[20px]
+                fill-light
+                hover:fill-theme
+                transition-all
+                duration-300
+            ;
+        }
+    }
 }
